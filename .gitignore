@@ -1,0 +1,13 @@
+/target
+
+# Local-test artefacts (see docs/local-test.md). These hold your
+# personal credentials, the persistent SQLite file and the TOTP
+# master key — never commit them.
+local-test.env
+local-test.db
+local-test.db-journal
+local-test.db-wal
+local-test.db-shm
+local-test.zz
+*.swp
+.DS_Store
