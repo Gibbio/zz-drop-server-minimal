@@ -1,0 +1,55 @@
+name: Bug report
+description: Report a bug or unexpected behavior
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a report.
+
+        **Security note:** if you think this bug has security
+        impact, **do not file a public issue**. See
+        [SECURITY.md](./SECURITY.md) for the private disclosure
+        flow.
+
+        **Do not paste passphrases, OAuth tokens, Authorization
+        headers, or decrypted profile content** in this form — the
+        issue tracker is public.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. ...
+        2. ...
+        3. Observed: ...
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: "v0.x.x or commit SHA"
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: OS / platform
+      placeholder: "macOS 14.x / Ubuntu 22.04 / Alpine 3.19 / WSL2 / ..."
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / output
+      description: Relevant output with **secrets redacted**.
+      render: shell

@@ -1,0 +1,38 @@
+name: Feature request
+description: Suggest a new feature or enhancement
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before opening a request, check existing issues and the
+        public roadmap.
+
+        zz-drop is intentionally minimal: **no sync, no mount, no
+        generic file manager, no share links** in v1. Features
+        outside that scope are unlikely to land — but parking-lot
+        ideas are welcome under Discussions.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What gap or pain are you trying to fill?
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: textarea
+    id: fit
+    attributes:
+      label: Why this fits zz-drop's scope
+      description: |
+        Briefly explain why this is a CLI-first / minimal-CLI fit
+        and not sync / mount / file-manager territory.
