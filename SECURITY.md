@@ -90,17 +90,17 @@ The server stores `profile.zz` blobs as opaque ciphertext. It
   token, or remote folder
 
 That property is enforced upstream: the encryption happens
-client-side in `zz-drop-tui` / `zz-drop` using primitives from
-`zz-drop-core`. This server is intentionally on the wrong side of
+client-side in `zz-drop-tui` (now `tui/` in the zz-drop monorepo) / `zz-drop` using primitives from
+`zz-drop-core` (now `core/` in the zz-drop monorepo). This server is intentionally on the wrong side of
 the trust boundary for those secrets.
 
 ## Cross-references
 
 - [`README.md`](README.md) — quickstart, configuration, status
-- [`../zz-drop-core/SECURITY.md`](../zz-drop-core/SECURITY.md) —
+- [`https://github.com/zz-drop/zz-drop/blob/main/SECURITY.md`](https://github.com/zz-drop/zz-drop/blob/main/SECURITY.md) —
   project-wide security policy
-- [`../zz-drop-core/docs/security-model.md`](../zz-drop-core/docs/security-model.md)
+- [`https://github.com/zz-drop/zz-drop/blob/main/core/docs/security-model.md`](https://github.com/zz-drop/zz-drop/blob/main/core/docs/security-model.md)
   — canonical model: what the server stores / does not store, TOTP
   scope, logging rules, honest non-claims
-- [`../zz-drop-core/docs/api/openapi.yaml`](../zz-drop-core/docs/api/openapi.yaml)
+- [`https://github.com/zz-drop/zz-drop/blob/main/core/docs/api/openapi.yaml`](https://github.com/zz-drop/zz-drop/blob/main/core/docs/api/openapi.yaml)
   — public HTTP API v1 contract
