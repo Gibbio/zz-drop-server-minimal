@@ -1,0 +1,53 @@
+# Dependabot configuration — supply-chain hygiene for
+# zz-drop-server-minimal (reference implementation of the API v1).
+# Schema: https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+#
+# Two ecosystems are watched:
+#  - cargo — daily, Rust security advisories cycle fast.
+#  - github-actions — weekly, low churn.
+#
+# Dependabot security alerts (separate from version updates) are
+# enabled through the repository's security_and_analysis API.
+
+version: 2
+updates:
+  - package-ecosystem: cargo
+    directory: "/"
+    schedule:
+      interval: daily
+      time: "06:00"
+      timezone: Europe/Rome
+    open-pull-requests-limit: 10
+    labels:
+      - dependencies
+      - rust
+    commit-message:
+      prefix: "build(deps)"
+      include: scope
+    groups:
+      rust-minor-and-patch:
+        applies-to: version-updates
+        update-types:
+          - minor
+          - patch
+
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:00"
+      timezone: Europe/Rome
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies
+      - github-actions
+    commit-message:
+      prefix: "build(ci)"
+      include: scope
+    groups:
+      gha-minor-and-patch:
+        applies-to: version-updates
+        update-types:
+          - minor
+          - patch
