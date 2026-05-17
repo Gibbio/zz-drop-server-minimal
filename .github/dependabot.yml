@@ -8,6 +8,11 @@
 #
 # Dependabot security alerts (separate from version updates) are
 # enabled through the repository's security_and_analysis API.
+#
+# `commit-message.include: scope` is intentionally NOT set — it
+# would append `(deps)` to the prefix and produce `build(deps)(deps):`
+# / `build(ci)(deps):` titles. The prefix already conveys the
+# ecosystem.
 
 version: 2
 updates:
@@ -23,7 +28,6 @@ updates:
       - rust
     commit-message:
       prefix: "build(deps)"
-      include: scope
     groups:
       rust-minor-and-patch:
         applies-to: version-updates
@@ -44,7 +48,6 @@ updates:
       - github-actions
     commit-message:
       prefix: "build(ci)"
-      include: scope
     groups:
       gha-minor-and-patch:
         applies-to: version-updates
